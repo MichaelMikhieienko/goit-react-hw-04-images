@@ -1,24 +1,21 @@
-import React from 'react';
+// App.jsx
+import React, { useState } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 
-class App extends React.Component {
-  state = {
-    filter: '',
+const App = () => {
+  const [filter, setFilter] = useState('');
+
+  const handleSubmit = (searchQuery) => {
+    setFilter(searchQuery);
   };
 
-  handleSubmit = (searchQuery) => {
-    this.setState({ filter: searchQuery });
-  };
-
-  render() {
-    return (
-      <div>
-        <Searchbar onSubmit={this.handleSubmit} />
-        <ImageGallery searchQuery={this.state.filter} />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Searchbar onSubmit={handleSubmit} />
+      <ImageGallery searchQuery={filter} />
+    </div>
+  );
+};
 
 export default App;

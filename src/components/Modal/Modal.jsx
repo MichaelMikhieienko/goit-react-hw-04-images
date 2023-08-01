@@ -1,3 +1,4 @@
+// Modal.jsx
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -17,3 +18,4 @@ Modal.propTypes = {
 };
 
 export default Modal;
+
