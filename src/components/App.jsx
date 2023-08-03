@@ -4,16 +4,16 @@ import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 
 const App = () => {
-  const [filter, setFilter] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSubmit = (searchQuery) => {
-    setFilter(searchQuery);
+  const handleSubmit = (query) => {
+    setSearchQuery(query);
   };
 
   return (
     <div>
       <Searchbar onSubmit={handleSubmit} />
-      <ImageGallery searchQuery={filter} />
+      {searchQuery && <ImageGallery searchQuery={searchQuery} />}
     </div>
   );
 };
